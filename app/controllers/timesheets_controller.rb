@@ -1,5 +1,5 @@
 class TimesheetsController < ApplicationController
-before_action :set_timesheet, only: [:show]
+before_action :set_timesheet, only: [:show, :update, :destroy]
 
 # We don't have views in API mode so we render json instead
     def index
@@ -10,7 +10,7 @@ before_action :set_timesheet, only: [:show]
     def create
         @timesheet = Timesheet.create(timesheet_params)
         if @timesheet.errors.any?
-            render json: timesheet.error.any?, status: unprocessable_entity
+            render json: @timesheet.error.any?, status: unprocessable_entity
         else
             render json: @timesheet, status: 201
         end
@@ -20,6 +20,19 @@ before_action :set_timesheet, only: [:show]
         render json: @timesheet
     end
 
+    def update
+        @timesheet.update(timesheet_params)
+        if @timesheet.errors.any?
+            render json: @timesheet.errors, status: unprocessable_entity
+        else
+            render json: @timesheet, status: 201
+        end
+    end
+
+    def destroy
+        @timesheet.delete
+        render json: 204
+    end
 
 private
     

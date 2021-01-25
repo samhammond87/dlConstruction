@@ -29,3 +29,22 @@ GET http://localhost:3000/api/timesheets/1
 
 ### Show timesheet id: 1000
 GET http://localhost:3000/api/timesheets/1000
+
+
+
+### Successfully update joke 1
+PUT http://localhost:3000/api/timesheets/1
+Content-Type: application/json
+
+{
+    "date": "25.01.21",
+    "start_time": "6:00am",
+    "end_time": "1:00pm",
+    "total_hours": 7,
+    "comments": "Client was happy with the work"
+}
+
+
+
+### Successfully delete joke with id 1
+DELETE http://localhost:3000/api/timesheets/1
