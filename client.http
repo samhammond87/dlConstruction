@@ -1,2 +1,31 @@
 ### Index method
 GET http://localhost:3000/api/timesheets
+
+
+
+### Successfully post a timesheet
+POST http://localhost:3000/api/timesheets
+Content-Type: application/json
+
+{
+    "name": "Andrew",
+    "date": "25.01.21",
+    "start_time": "12:00pm",
+    "end_time": "4:00pm",
+    "total_hours": 4,
+    "comments": "I prefer design!"
+}
+
+
+
+### Unsuccessfully post a timesheet
+
+
+
+### Show timesheet id: 1
+GET http://localhost:3000/api/timesheets/1
+
+
+
+### Show timesheet id: 1000
+GET http://localhost:3000/api/timesheets/1000
