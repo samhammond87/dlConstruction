@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     post '/timesheets', to: 'timesheets#create'
     get '/timesheets/:id', to: 'timesheets#show'
     put '/timesheets/:id', to: 'timesheets#update'
-    delete '/timesheets/:id', to: 'timesheet#destroy'
+    delete '/timesheets/:id', to: 'timesheets#destroy'
   end
 end
 
