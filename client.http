@@ -48,3 +48,17 @@ Content-Type: application/json
 
 ### Successfully delete joke with id 1
 DELETE http://localhost:3000/api/timesheets/1
+
+
+
+### Create a user
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+    "email": "yee@test.com",
+    "password": "password3",
+    "admin": true,
+    "password_confirmation": "password3"
+
+}

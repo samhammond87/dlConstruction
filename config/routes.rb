@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     get '/timesheets/:id', to: 'timesheets#show'
     put '/timesheets/:id', to: 'timesheets#update'
     delete '/timesheets/:id', to: 'timesheets#destroy'
+  
+    scope '/auth' do 
+      post 'sign_up', to: 'users#create'
+    end
   end
 end
 
