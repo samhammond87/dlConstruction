@@ -130,7 +130,8 @@ The target audience are current and potential customers and all company employee
 
 **The Owner**
 
-![docs/adminicon.png](docs/adminicon.png)
+![docs/adminIcon.png](docs/adminIcon.png)
+
 
 The owner and his management team are hard workers that have brought the company great success in recent years.  Unfortunately, they lack the proper time to deal with employee paperwork, pay and communication. 
 
@@ -161,10 +162,10 @@ D & L Constructions clients live all across Sydney.  Anyone who is currently bui
 
 ![docs/employeeIcon.png](docs/employeeIcon.png)
 
+
 D & L Constructions have both employees and contractors. They are experienced tradespeople who's strengths have allowed them to succeed in a competitive industry.  However, their work is hard and once they've left the site the last thing they want to do is fill out more paperwork once they get home. 
 
 **As an employee, I want to:**
-
 
 - Submit a timesheet with minimal effort so I don't have to waste time once I'm already at home
 - Know the status of my logged timesheets so that I can keep track of my finances.
