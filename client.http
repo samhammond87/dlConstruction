@@ -32,7 +32,7 @@ GET http://localhost:3000/api/timesheets/1000
 
 
 
-### Successfully update joke 1
+### Successfully update timesheet 1
 PUT http://localhost:3000/api/timesheets/1
 Content-Type: application/json
 
@@ -46,7 +46,7 @@ Content-Type: application/json
 
 
 
-### Successfully delete joke with id 1
+### Successfully delete timesheet with id 1
 DELETE http://localhost:3000/api/timesheets/1
 
 
@@ -56,20 +56,20 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "email": "sam4@test.com",
-    "password": "password3",
-    "admin": true,
-    "password_confirmation": "password3"
+    "username": "Sam",
+    "email": "sam@test.com",
+    "password": "password",
+    "password_confirmation": "password"
 
 }
 
 
 
 ### Sign in with correct details
-POST http://localhost:3000/api/auth/sign_up
+POST http://localhost:3000/api/auth/sign_in
 Content-Type: application/json
 
 {
-	"email": "Sam2@test.com",
-	"password": "password2"
+    "email": "sam@test.com",
+	"password": "password"
 }
