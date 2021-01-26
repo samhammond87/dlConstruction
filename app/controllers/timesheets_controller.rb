@@ -20,7 +20,7 @@ before_action :check_ownership, only: [:update, :destroy]
     end
 
     def show
-        render json: @timesheet
+        render json: @timesheet.transform_timesheet
     end
 
     def update

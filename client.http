@@ -24,8 +24,8 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE3MjczM
 
 
 
-### Show timesheet id: 1
-GET http://localhost:3000/api/timesheets/1
+### Show timesheet id: 2
+GET http://localhost:3000/api/timesheets/2
 
 
 
