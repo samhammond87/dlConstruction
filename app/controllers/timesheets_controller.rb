@@ -1,5 +1,8 @@
 class TimesheetsController < ApplicationController
+before_action :authenticate_user, except: [:index, :show]
 before_action :set_timesheet, only: [:show, :update, :destroy]
+before_action :check_ownership, only: [:update, :destroy]
+
 
 # We don't have views in API mode so we render json instead
     def index
@@ -8,7 +11,7 @@ before_action :set_timesheet, only: [:show, :update, :destroy]
     end
 
     def create
-        @timesheet = Timesheet.create(timesheet_params)
+        @timesheet = current_user.timesheets.create(timesheet_params)
         if @timesheet.errors.any?
             render json: @timesheet.error.any?, status: unprocessable_entity
         else
@@ -46,6 +49,12 @@ private
         rescue
             render json: {error: "Timesheet not found"}, status: 404
         end
+
+    def check_ownership
+        if current_user.id != @timesheet.user.id
+            render json: {error: "You don't have permission to do that, Sorry!"}, status: 401
+        end
+    end
 
     end
 

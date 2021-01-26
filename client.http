@@ -6,6 +6,8 @@ GET http://localhost:3000/api/timesheets
 ### Successfully post a timesheet
 POST http://localhost:3000/api/timesheets
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE3MjczMjAsInN1YiI6NH0.IFiPcShnQqBL99ntQJ0FMSjT1Qmb7u-UpoeP25OMVRQ
+
 
 {
     "name": "Andrew",
@@ -35,6 +37,8 @@ GET http://localhost:3000/api/timesheets/1000
 ### Successfully update timesheet 1
 PUT http://localhost:3000/api/timesheets/1
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE3MjgyMzgsInN1YiI6MX0.M1eU7qWFLprad4Gqll8vXSvNlKEzq4G0QWijat3gzWs
+
 
 {
     "date": "25.01.21",
@@ -56,8 +60,8 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "username": "Sam",
-    "email": "sam@test.com",
+    "username": "Test",
+    "email": "test@test.com",
     "password": "password",
     "password_confirmation": "password"
 
@@ -73,3 +77,20 @@ Content-Type: application/json
     "email": "sam@test.com",
 	"password": "password"
 }
+
+
+
+### Sign in with correct details
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{
+    "email": "sam@test.com",
+	"password": "password1"
+}
+
+
+
+### Destroy timesheet I have permission for
+DELETE http://localhost:3000/api/timesheets/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE3MjgyMzgsInN1YiI6MX0.M1eU7qWFLprad4Gqll8vXSvNlKEzq4G0QWijat3gzWs
