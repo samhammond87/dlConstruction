@@ -56,9 +56,20 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "email": "yee@test.com",
+    "email": "sam4@test.com",
     "password": "password3",
     "admin": true,
     "password_confirmation": "password3"
 
+}
+
+
+
+### Sign in with correct details
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+	"email": "Sam2@test.com",
+	"password": "password2"
 }
