@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    # before_action :authenticate_user
 
     def create
         @user = User.create(user_params)
@@ -21,10 +22,16 @@ class UsersController < ApplicationController
         end
     end
 
+
+    # it 'responds successfully' do
+    #     get secured_resources_url, headers: authenticated_header
+    
+    #     assert_response :success
+
 private
 
     def user_params
-        params.permit(:username, :email, :admin, :password, :password_confirmation)
+        params.permit(:user, :username, :email, :admin, :password, :password_confirmation)
     end
 
 end

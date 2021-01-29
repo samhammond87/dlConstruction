@@ -6,10 +6,11 @@ GET http://localhost:3000/api/timesheets
 ### Successfully post a timesheet
 POST http://localhost:3000/api/timesheets
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE3MjczMjAsInN1YiI6NH0.IFiPcShnQqBL99ntQJ0FMSjT1Qmb7u-UpoeP25OMVRQ
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE4MTYyMTgsInN1YiI6NH0.wWXHa_GDifl9njn8fV4LwNBM9AX7BGZXkwPOu8yGvLs
 
 
 {
+
     "name": "Andrew",
     "date": "25.01.21",
     "start_time": "12:00pm",
@@ -34,13 +35,14 @@ GET http://localhost:3000/api/timesheets/1000
 
 
 
-### Successfully update timesheet 1
-PUT http://localhost:3000/api/timesheets/1
+### Successfully update timesheet 5
+PUT http://localhost:3000/api/timesheets/5
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE3MjgyMzgsInN1YiI6MX0.M1eU7qWFLprad4Gqll8vXSvNlKEzq4G0QWijat3gzWs
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE4MTYyMTgsInN1YiI6NH0.wWXHa_GDifl9njn8fV4LwNBM9AX7BGZXkwPOu8yGvLs
 
 
 {
+    "user_id": 4,
     "date": "25.01.21",
     "start_time": "6:00am",
     "end_time": "1:00pm",
@@ -60,8 +62,8 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "username": "Test",
-    "email": "test@test.com",
+    "username": "simon",
+    "email": "simon@test.com",
     "password": "password",
     "password_confirmation": "password"
 
@@ -74,7 +76,7 @@ POST http://localhost:3000/api/auth/sign_in
 Content-Type: application/json
 
 {
-    "email": "sam@test.com",
+    "email": "harry@test.com",
 	"password": "password"
 }
 
@@ -85,7 +87,7 @@ POST http://localhost:3000/api/auth/sign_in
 Content-Type: application/json
 
 {
-    "email": "sam@test.com",
+    "email": "harry@test.com",
 	"password": "password1"
 }
 
