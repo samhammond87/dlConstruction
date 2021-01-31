@@ -49,13 +49,10 @@ private
         rescue
             render json: {error: "Timesheet not found"}, status: 404
         end
-
+    end
     def check_ownership
         if current_user.id != @timesheet.user.id
             render json: {error: "You don't have permission to do that, Sorry!"}, status: 401
         end
     end
-
-    end
-
 end

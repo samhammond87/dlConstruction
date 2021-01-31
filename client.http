@@ -10,13 +10,13 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE4MTYyM
 
 
 {
-
+    "user_id": 4,
     "name": "Andrew",
     "date": "25.01.21",
     "start_time": "12:00pm",
     "end_time": "4:00pm",
     "total_hours": 4,
-    "comments": "I prefer design!"
+    "comments": "testing testing testing!"
 }
 
 
@@ -36,18 +36,18 @@ GET http://localhost:3000/api/timesheets/1000
 
 
 ### Successfully update timesheet 5
-PUT http://localhost:3000/api/timesheets/5
+PUT http://localhost:3000/api/timesheets/17
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE4MTYyMTgsInN1YiI6NH0.wWXHa_GDifl9njn8fV4LwNBM9AX7BGZXkwPOu8yGvLs
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTIwNzExODAsInN1YiI6MX0.WxyKjwCehKTFfoELmLetsgy3YzcwNrNv5x-XFRLAITE
 
 
 {
-    "user_id": 4,
+    "user_id": 1,
     "date": "25.01.21",
     "start_time": "6:00am",
     "end_time": "1:00pm",
     "total_hours": 7,
-    "comments": "Client was happy with the work"
+    "comments": "Does update work?"
 }
 
 
@@ -62,8 +62,8 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "username": "simon",
-    "email": "simon@test.com",
+    "username": "bianc",
+    "email": "bianc@test.com",
     "password": "password",
     "password_confirmation": "password"
 
@@ -76,7 +76,7 @@ POST http://localhost:3000/api/auth/sign_in
 Content-Type: application/json
 
 {
-    "email": "harry@test.com",
+    "email": "sam@test.com",
 	"password": "password"
 }
 
