@@ -1,17 +1,18 @@
 ### Index method
 GET http://localhost:3000/api/timesheets
-
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTIzMTI1ODcsInN1YiI6NH0.fpdDxjCzeg7QmxA1riZT6aCpKwwT2FcPBAMvB-Rfxns
 
 
 ### Successfully post a timesheet
 POST http://localhost:3000/api/timesheets
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE4MTYyMTgsInN1YiI6NH0.wWXHa_GDifl9njn8fV4LwNBM9AX7BGZXkwPOu8yGvLs
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTIzMTI0MTksInN1YiI6M30.JLwd1n1iZ4WMUIhYYxG_ghTb_8RNx8UgTpkVJnZ2zwo
 
 
 {
-
-    "name": "Andrew",
+    "user_id": 3,
+    "name": "Tracey",
     "date": "25.01.21",
     "start_time": "12:00pm",
     "end_time": "4:00pm",
@@ -62,13 +63,13 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "username": "simon",
-    "email": "simon@test.com",
+    "username": "abc",
+    "email": "abc@test.com",
     "password": "password",
-    "password_confirmation": "password"
+    "password_confirmation": "password",
+    "admin": "true"
 
 }
-
 
 
 ### Sign in with correct details
@@ -76,7 +77,7 @@ POST http://localhost:3000/api/auth/sign_in
 Content-Type: application/json
 
 {
-    "email": "harry@test.com",
+    "email": "bui@test.com",
 	"password": "password"
 }
 

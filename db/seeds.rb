@@ -7,6 +7,7 @@ if User.count == 0
 	User.create(username: "Sam", email: "sam@test.com", password: "password", password_confirmation: "password")
 	User.create(username: "Yee", email: "yee@test.com", password: "password2", password_confirmation: "password2")
 	User.create(username: "Tracey", email: "tracey@test.com", password: "password3", password_confirmation: "password3")
+	User.create(username: "Andrew", email: "bui@test.com", password: "password", password_confirmation: "password", admin: true)
 end
 # add [user_id: 1] and [user_id: 2] to Timesheet.create
 
