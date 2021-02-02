@@ -1,5 +1,6 @@
 class Timesheet < ApplicationRecord
     belongs_to :user
+    # before_action :authenticate_user
 
     def transform_timesheet
         return {
@@ -12,5 +13,11 @@ class Timesheet < ApplicationRecord
             posted: self.created_at,
             edited: self.updated_at
         }
+    end
+
+    def destroy
+        if current_user.admin?
+          @timesheet.destroy
+        end
     end
 end

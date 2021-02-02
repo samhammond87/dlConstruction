@@ -34,4 +34,5 @@ private
         params.permit(:user, :username, :email, :admin, :password, :password_confirmation)
     end
 
+    
 end
