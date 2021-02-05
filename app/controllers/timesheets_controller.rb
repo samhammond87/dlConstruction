@@ -1,7 +1,7 @@
 class TimesheetsController < ApplicationController
 before_action :authenticate_user, except: [:show]
 before_action :set_timesheet, only: [:show, :update, :destroy]
-# before_action :check_ownership, only: [:update, :destroy]
+before_action :check_ownership, only: [:update, :destroy]
 
 
 # We don't have views in API mode so we render json instead
@@ -67,9 +67,9 @@ before_action :set_timesheet, only: [:show, :update, :destroy]
         end
     end
 
-    # def check_ownership
-    #     if current_user.id != @timesheet.user.id
-    #         render json: {error: "You don't have permission to do that, Sorry!"}, status: 401
-    #     end
-    # end
+    def check_ownership
+        if current_user.id != @timesheet.user.id
+            render json: {error: "You don't have permission to do that, Sorry!"}, status: 401
+        end
+    end
 end

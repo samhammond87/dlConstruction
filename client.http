@@ -1,7 +1,7 @@
 ### Index method
 GET http://localhost:3000/api/timesheets
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTIzMTI1ODcsInN1YiI6NH0.fpdDxjCzeg7QmxA1riZT6aCpKwwT2FcPBAMvB-Rfxns
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTI0MTc4NzUsInN1YiI6NH0.X2vkkl5bcjSEzfCSYpOpImAgAJabAqcljPeY93oCpLA
 
 
 ### Successfully post a timesheet
@@ -38,18 +38,18 @@ GET http://localhost:3000/api/timesheets/1000
 
 
 ### Successfully update timesheet 5
-PUT http://localhost:3000/api/timesheets/17
+PUT http://localhost:3000/api/timesheets/5
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTIwNzExODAsInN1YiI6MX0.WxyKjwCehKTFfoELmLetsgy3YzcwNrNv5x-XFRLAITE
+Authorization: Bearer eeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTI0MTc4NzUsInN1YiI6NH0.X2vkkl5bcjSEzfCSYpOpImAgAJabAqcljPeY93oCpLA
 
 
 {
-    "user_id": 1,
+
     "date": "25.01.21",
     "start_time": "6:00am",
     "end_time": "1:00pm",
-    "total_hours": 7,
-    "comments": "Does update work?"
+    "total_hours": 24,
+    "comments": "Testing, testing, 1234"
 }
 
 
