@@ -1,7 +1,11 @@
 class Timesheet < ApplicationRecord
     belongs_to :user
-    # before_action :authenticate_user
+  
     validates :name, presence: true
+    validates :date, presence: true
+    validates :start_time, presence: true
+    validates :end_time, presence: true
+    validates :total_hours, presence: true
 
 
     def transform_timesheet
