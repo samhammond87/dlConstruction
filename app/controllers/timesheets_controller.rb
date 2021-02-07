@@ -19,7 +19,7 @@ before_action :set_timesheet, only: [:show, :update, :destroy]
     def create
         @timesheet = current_user.timesheets.create(timesheet_params)
         if @timesheet.errors.any?
-            render json: @timesheet.error.any?, status: unprocessable_entity
+            render json: @timesheet.errors.any?, status: unprocessable_entity
         else
             render json: @timesheet, status: 201
         end
