@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_100219) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.boolean "processed"
+    t.boolean "processed", default: false
     t.index ["user_id"], name: "index_timesheets_on_user_id"
   end
 
