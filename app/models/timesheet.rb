@@ -16,6 +16,7 @@ class Timesheet < ApplicationRecord
             end_time: self.end_time,
             total_hours: self.total_hours,
             comments: self.comments,
+            processed: self.processed,
             posted: self.created_at,
             edited: self.updated_at
         }
