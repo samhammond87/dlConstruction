@@ -49,7 +49,7 @@ before_action :set_timesheet, only: [:show, :update, :destroy]
     private
     
     def timesheet_params
-        params.require(:timesheet).permit(:name, :date, :start_time, :end_time, :total_hours, :comments)
+        params.require(:timesheet).permit(:name, :date, :start_time, :end_time, :total_hours, :comments, :processed)
     end
 
     def set_timesheet
