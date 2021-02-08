@@ -40,10 +40,8 @@ before_action :set_timesheet, only: [:show, :update, :destroy]
 
     # allow admin to delete timesheets
     def destroy
-        if current_user.admin?
          @timesheet.delete
         render json: 204
-        end
     end
 
     
