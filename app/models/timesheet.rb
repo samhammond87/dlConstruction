@@ -21,10 +21,4 @@ class Timesheet < ApplicationRecord
             edited: self.updated_at
         }
     end
-
-    # def destroy
-    #     if current_user.admin?
-    #       @timesheet.destroy
-    #     end
-    # end
 end
