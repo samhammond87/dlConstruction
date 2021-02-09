@@ -1,5 +1,5 @@
 class TimesheetsController < ApplicationController
-before_action :authenticate_user, except: [:show]
+# before_action :authenticate_user, except: [:show]
 before_action :set_timesheet, only: [:show, :update, :destroy]
 # before_action :check_ownership, only: [:update, :destroy]
 
