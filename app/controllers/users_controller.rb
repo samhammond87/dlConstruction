@@ -23,11 +23,6 @@ class UsersController < ApplicationController
     end
 
 
-    # it 'responds successfully' do
-    #     get secured_resources_url, headers: authenticated_header
-    
-    #     assert_response :success
-
 private
 
     def user_params
