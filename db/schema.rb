@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_051804) do
+ActiveRecord::Schema.define(version: 2021_02_08_100219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,14 +24,19 @@ ActiveRecord::Schema.define(version: 2021_01_25_051804) do
     t.string "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.boolean "processed", default: false
+    t.index ["user_id"], name: "index_timesheets_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
   end
 
+  add_foreign_key "timesheets", "users"
 end

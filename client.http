@@ -1,19 +1,24 @@
 ### Index method
 GET http://localhost:3000/api/timesheets
-
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTI0MTc4NzUsInN1YiI6NH0.X2vkkl5bcjSEzfCSYpOpImAgAJabAqcljPeY93oCpLA
 
 
 ### Successfully post a timesheet
 POST http://localhost:3000/api/timesheets
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTIzMTI0MTksInN1YiI6M30.JLwd1n1iZ4WMUIhYYxG_ghTb_8RNx8UgTpkVJnZ2zwo
+
 
 {
-    "name": "Andrew",
+
+    "user_id": 3,
+    "name": "Tracey",
     "date": "25.01.21",
     "start_time": "12:00pm",
     "end_time": "4:00pm",
     "total_hours": 4,
-    "comments": "I prefer design!"
+    "comments": "testing testing testing!"
 }
 
 
@@ -22,8 +27,8 @@ Content-Type: application/json
 
 
 
-### Show timesheet id: 1
-GET http://localhost:3000/api/timesheets/1
+### Show timesheet id: 2
+GET http://localhost:3000/api/timesheets/2
 
 
 
@@ -32,21 +37,24 @@ GET http://localhost:3000/api/timesheets/1000
 
 
 
-### Successfully update joke 1
-PUT http://localhost:3000/api/timesheets/1
+### Successfully update timesheet 5
+PUT http://localhost:3000/api/timesheets/5
 Content-Type: application/json
+Authorization: Bearer eeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTI0MTc4NzUsInN1YiI6NH0.X2vkkl5bcjSEzfCSYpOpImAgAJabAqcljPeY93oCpLA
+
 
 {
+
     "date": "25.01.21",
     "start_time": "6:00am",
     "end_time": "1:00pm",
-    "total_hours": 7,
-    "comments": "Client was happy with the work"
+    "total_hours": 24,
+    "comments": "Testing, testing, 1234"
 }
 
 
 
-### Successfully delete joke with id 1
+### Successfully delete timesheet with id 1
 DELETE http://localhost:3000/api/timesheets/1
 
 
@@ -56,9 +64,39 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "email": "yee@test.com",
-    "password": "password3",
-    "admin": true,
-    "password_confirmation": "password3"
+
+    "username": "abc",
+    "email": "abc@test.com",
+    "password": "password",
+    "password_confirmation": "password",
+    "admin": "true"
 
 }
+
+
+### Sign in with correct details
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{
+
+    "email": "bui@test.com",
+	  "password": "password"
+}
+
+
+
+### Sign in with incorrect details
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{
+    "email": "harry@test.com",
+	"password": "password1"
+}
+
+
+
+### Destroy timesheet I have permission for
+DELETE http://localhost:3000/api/timesheets/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE3MjgyMzgsInN1YiI6MX0.M1eU7qWFLprad4Gqll8vXSvNlKEzq4G0QWijat3gzWs
