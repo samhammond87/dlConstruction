@@ -18,7 +18,7 @@ before_action :set_timesheet, only: [:show, :update, :destroy]
     def create
         @timesheet = current_user.timesheets.create(timesheet_params)
         if @timesheet.errors.any?
-            render json: @timesheet.error.any?, status: unprocessable_entity
+            render json: @timesheet.errors.any?, status: unprocessable_entity
         else
             render json: @timesheet, status: 201
         end
@@ -33,15 +33,13 @@ before_action :set_timesheet, only: [:show, :update, :destroy]
         if @timesheet.errors.any?
             render json: @timesheet.errors, status: unprocessable_entity
         else
-            render json: @timesheet, status: 201
+            render json: @timesheet.transform_timesheet, status: 201
         end
     end
 
     def destroy
-        if current_user.admin?
          @timesheet.delete
         render json: 204
-        end
     end
 
     
@@ -49,7 +47,7 @@ before_action :set_timesheet, only: [:show, :update, :destroy]
     private
     
     def timesheet_params
-        params.require(:timesheet).permit(:name, :date, :start_time, :end_time, :total_hours, :comments)
+        params.require(:timesheet).permit(:name, :date, :start_time, :end_time, :total_hours, :comments, :processed)
     end
 
     def set_timesheet
