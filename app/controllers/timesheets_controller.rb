@@ -34,7 +34,7 @@ before_action :set_timesheet, only: [:show, :update, :destroy]
         if @timesheet.errors.any?
             render json: @timesheet.errors, status: unprocessable_entity
         else
-            render json: @timesheet, status: 201
+            render json: @timesheet.transform_timesheet, status: 201
         end
     end
 
