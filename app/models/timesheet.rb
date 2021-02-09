@@ -22,9 +22,9 @@ class Timesheet < ApplicationRecord
         }
     end
 
-    def destroy
-        if current_user.admin?
-          @timesheet.destroy
-        end
-    end
+    # def destroy
+    #     if current_user.admin?
+    #       @timesheet.destroy
+    #     end
+    # end
 end
